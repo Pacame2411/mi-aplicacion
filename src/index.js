@@ -1,17 +1,47 @@
+// index.js
+
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import ReactDOM from 'react-dom';
+import './index.css'; // Importa el archivo CSS aquí
 import App from './App';
-import reportWebVitals from './reportWebVitals';
 
-const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
+// Estilos específicos para el header, body y footer
+const headerStyles = {
+  backgroundColor: '#333',
+  color: '#fff',
+  padding: '10px',
+  textAlign: 'center',
+};
+
+const bodyStyles = {
+  padding: '20px',
+};
+
+const footerStyles = {
+  backgroundColor: '#333',
+  color: '#fff',
+  padding: '10px',
+  textAlign: 'center',
+};
+
+ReactDOM.render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>
-);
+    <div>
+      {/* Header */}
+      <header style={headerStyles}>
+        <h1>Mi Aplicación</h1>
+      </header>
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+      {/* Body */}
+      <div style={bodyStyles}>
+        <App />
+      </div>
+
+      {/* Footer */}
+      <footer style={footerStyles}>
+        © 2024 Mi Aplicación
+      </footer>
+    </div>
+  </React.StrictMode>,
+  document.getElementById('root')
+);
